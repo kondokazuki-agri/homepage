@@ -17,20 +17,57 @@
 </nav>
 
 <header class="header">
-  <h1>こんどうかずきの部屋</h1>
-  <p>ホームページを開設してみましたよ</p>
+  <h1>こんどうかずきの部屋へようこそ</h1>
+  <p>近藤航樹（こんどうかずき）です。東京農工大学大学院連合農学研究科の博士学生をやっています。主に土壌侵食の研究をしています。<br>研究テーマは「日本全域における降雨エネルギーを考慮した土壌侵食リスクの将来予測」で、農業工学のみならず、気象学や気候科学などの知見も生かしながら学際的な研究に取り組んでいます。</p>
 </header>
 
 <main class="container">
+  
+<section class="card">
+  <h2>Latest</h2>
+  <div id="latest-posts">
+    <p class="sub">読み込み中…</p>
+  </div>
+</section>
+
+<script>
+(async () => {
+  const box = document.getElementById("latest-posts");
+  try {
+    const res = await fetch("notes/posts.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("posts.json not found");
+    const posts = await res.json();
+
+    const latest = posts.slice(0, 3);
+    if (latest.length === 0) {
+      box.innerHTML = '<p class="sub">まだ記事がありません。</p>';
+      return;
+    }
+
+    box.innerHTML = latest.map(p => `
+      <article class="post-item">
+        <h3 class="post-title"><a href="${p.url}">${p.title}</a></h3>
+        <p class="sub">${p.date}</p>
+        ${p.excerpt ? `<p class="post-excerpt">${p.excerpt}</p>` : ""}
+      </article>
+    `).join("");
+  } catch (e) {
+    box.innerHTML = '<p class="sub">最新記事の読み込みに失敗しました（posts.json を確認してください）。</p>';
+  }
+})();
+</script>
+
   <section class="card">
-    <h2>ようこそ</h2>
-    <p>近藤航樹（こんどうかずき）です。東京農工大学大学院連合農学研究科の博士学生をやっています。主に土壌侵食の研究をしています。<br>研究テーマは「日本全域における降雨エネルギーを考慮した土壌侵食リスクの将来予測」で、農業工学のみならず、気象学や気候科学などの知見も生かしながら学際的な研究に取り組んでいます。</p>
+    <h2>さてと。</h2>
+    <p>どんなサイトにしようかな。</p>
   </section>
+  
 </main>
 
 <footer class="footer">© 2026</footer>
 </body>
 </html>
+
 
 
 
