@@ -131,6 +131,27 @@ body {
 }
 
 /* =========================
+   Publications
+========================= */
+.pub {
+  padding-left: 1.2rem;
+  margin: 0.25rem 0 0.75rem 0;
+}
+
+.pub li {
+  margin-bottom: 0.6rem;
+  line-height: 1.7;
+}
+
+/* underline for own name */
+.author.me {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+
+/* =========================
    Responsive (mobile)
    - Make .cv stack vertically: year then org
 ========================= */
