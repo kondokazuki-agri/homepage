@@ -131,16 +131,15 @@ body {
 }
 
 /* =========================
-   Publications (final)
+   Publications (readable)
 ========================= */
-
 .pub {
   padding-left: 1.2rem;
   margin: 0.25rem 0 0.75rem 0;
 }
 
 .pub li {
-  margin-bottom: 1.2rem;   /* 業績ごとの余白 */
+  margin-bottom: 1.2rem;   /* 1件ごとに空ける */
   line-height: 1.75;
 }
 
@@ -161,7 +160,7 @@ body {
   color: #4b5563;
 }
 
-/* underline for own name (force) */
+/* underline for own name (強めに指定) */
 .pub .author.me {
   text-decoration: underline;
   text-decoration-thickness: 2px;
