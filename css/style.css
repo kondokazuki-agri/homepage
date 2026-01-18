@@ -1,7 +1,22 @@
-/* ========================= 
+/* =========================
    Base
 ========================= */
-:root { color-scheme: light; }
+:root {
+  color-scheme: light;
+
+  /* Sticky nav offset:
+     nav padding-top + (1 line text height) + nav padding-bottom
+     - text line-height: nav has no explicit line-height, assume ~1.2
+     - keep it parametric to avoid magic numbers */
+  --nav-pad-y: 0.75rem;
+  --nav-line: 1.2rem;
+  --nav-offset: calc(var(--nav-pad-y) + var(--nav-line) + var(--nav-pad-y));
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-offset);
+}
 
 body {
   margin: 0;
@@ -24,7 +39,7 @@ a:hover { text-decoration: underline; }
   position: sticky;
   top: 0;
   background: #111827;
-  padding: 0.75rem 1rem;
+  padding: var(--nav-pad-y) 1rem;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -34,7 +49,7 @@ a:hover { text-decoration: underline; }
   color: #fff;
   text-decoration: none;
   opacity: 0.9;
-  padding: 0.25rem 0.4rem;   /* タップ性＋上品さ */
+  padding: 0.25rem 0.4rem; /* タップ性＋上品さ */
   border-radius: 8px;
 }
 
@@ -216,10 +231,10 @@ h2 { margin: 1.25rem 0 0.6rem 0; }
   margin: 0.25rem 0 0 0;
   line-height: 1.7;
 }
+
 /* =========================
    Table of Contents (TOC)
 ========================= */
-
 .toc {
   list-style: none;
   padding-left: 0;
@@ -229,36 +244,23 @@ h2 { margin: 1.25rem 0 0.6rem 0; }
   margin: 0.4rem 0;
 }
 
-/* 通常時 */
 .toc a {
   display: inline-block;
-  color: #111827;            /* 黒寄り */
-  text-decoration: none;     /* 下線なし */
-  transition:
-    transform 0.15s ease,
-    color 0.15s ease;
+  color: #111827;
+  text-decoration: none;
+  transition: transform 0.15s ease, color 0.15s ease;
 }
 
-/* ホバー時 */
 .toc a:hover {
-  color: #2563eb;            /* ほんのり青 */
-  transform: scale(1.05);    /* 少しだけ拡大 */
+  color: #2563eb;
+  transform: scale(1.05);
 }
 
-/* キーボード操作時（アクセシビリティ） */
 .toc a:focus-visible {
   outline: none;
   color: #2563eb;
   transform: scale(1.05);
 }
-html {
-  scroll-behavior: smooth;
-}
-
-html {
-  scroll-padding-top: 72px;
-}
-
 
 /* =========================
    Responsive (mobile)
@@ -282,4 +284,10 @@ html {
   }
 
   .cv .org { line-height: 1.6; }
+
+  /* mobile nav tends to become taller if it wraps */
+  :root {
+    --nav-line: 1.4rem;
+    --nav-offset: calc(var(--nav-pad-y) + var(--nav-line) + var(--nav-pad-y));
+  }
 }
