@@ -1,0 +1,157 @@
+---
+layout: default
+title: "2. WEPPのインストール｜WEPPの使い方"
+description: "WEPPのインストール方法と初期動作確認"
+header_lead: "2. WEPPのインストール"
+wepp_prev_url: /WEPP/concepts.html
+wepp_prev_title: "1. はじめに（WEPPの概要）"
+wepp_next_url: /WEPP/inputs.html
+wepp_next_title: "3. 入力データ（Climate / Soil / Management / Topography）"
+---
+
+<p class="sub breadcrumb">
+  <a href="{{ '/' | relative_url }}">Home</a> /
+  <a href="{{ '/other.html' | relative_url }}">その他</a> /
+  <a href="{{ '/WEPP/' | relative_url }}">WEPPの使い方</a> /
+  2. WEPPのインストール
+</p>
+
+<section class="card">
+  <h2 class="h2-tight">このページの位置づけ</h2>
+  <p class="sub">
+    WEPPの使い方は以下の4段階で整理します。<br>
+    このページは <strong>2. WEPPのインストール</strong> です。
+  </p>
+  <ul class="simple">
+    <li>1. はじめに（WEPPの概要）</li>
+    <li><strong>2. WEPPのインストール</strong></li>
+    <li>3. 入力データ（Climate / Soil / Management / Topography）</li>
+    <li>4. 出力の見方（最低限）</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2 class="h2-tight">このページのゴール</h2>
+  <ul class="simple">
+    <li>WEPP本体をPCに導入する</li>
+    <li>圃場（hillslope）スケールの計算が実行できる状態にする</li>
+    <li>サンプルデータで「実行 → 出力」を確認する</li>
+  </ul>
+  <p class="sub">
+    ※この段階では「動かすことができる」ことを最優先にします。
+  </p>
+</section>
+
+<section class="card">
+  <h2 class="h2-tight">WEPPのダウンロード</h2>
+  <ul class="simple">
+    <li>
+      WEPP公式ページ（USDA/NRCS）：<br>
+      <a href="https://www.ars.usda.gov/midwest-area/west-lafayette-in/national-soil-erosion-research/docs/wepp/wepp-downloads/"
+         target="_blank" rel="noopener">
+        https://www.ars.usda.gov/midwest-area/west-lafayette-in/national-soil-erosion-research/docs/wepp/wepp-downloads/
+      </a>
+    </li>
+    <li class="sub">
+      上記ページの <u>Click here to download WEPP Version 2024</u> をクリックしてください。<br>
+      本ページ執筆時点での最新版は <strong>2024年9月リリース版</strong> です。
+    </li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2 class="h2-tight">インストールと初期配置</h2>
+
+  <h3>1) インストール前の準備</h3>
+  <ul class="simple">
+    <li>任意の場所に WEPP 用フォルダを作成します（推奨：Cドライブ直下）。</li>
+    <li>
+      例：エクスプローラ → PC → OS(C:) →  
+      <strong>wepp2024</strong> というフォルダを作成
+    </li>
+  </ul>
+
+  <h3>2) インストールの実行</h3>
+  <ul class="simple">
+    <li>ダウンロードした <code>weppwin-2024-installer.exe</code> を実行します。</li>
+    <li>
+      「WindowsによってPCが保護されました」と表示された場合は  
+      「詳細情報」→「実行」を選択してください。
+    </li>
+
+    <figure class="fig">
+      <img src="img/install-1.png" loading="lazy">
+    </figure>
+    <li>表示されたら <strong>Next</strong> をクリック。</li>
+
+    <figure class="fig">
+      <img src="img/install-2.png" loading="lazy">
+    </figure>
+    <li>
+      インストール先指定画面で <strong>Browse</strong> を押し、  
+      先ほど作成した <strong>wepp2024</strong> フォルダを選択 → <strong>Next</strong>。
+    </li>
+
+    <li>デスクトップアイコン作成はチェックを入れて進めてOKです。</li>
+
+    <li><strong>Install</strong> をクリックしてインストールを実行。</li>
+
+    <figure class="fig">
+      <img src="img/install-9.png" loading="lazy">
+    </figure>
+    <li>
+      完了画面で <strong>Launch WEPP</strong> にチェックを入れ、  
+      <strong>Finish</strong> をクリック。
+    </li>
+  </ul>
+
+  <h3>3) WEPPの動作チェック</h3>
+  <ul class="simple">
+    <figure class="fig">
+      <img src="img/install-3.png" loading="lazy">
+    </figure>
+    <li>
+      初回起動時の確認画面が表示されたら <strong>OK</strong>。
+    </li>
+
+    <figure class="fig">
+      <img src="img/install-8.png" loading="lazy">
+    </figure>
+    <li>
+      「Use the default WEPP project」を選択し <strong>Start Task</strong>。<br>
+      「Don't show again」にチェックを入れておくと次回以降省略されます。
+    </li>
+
+    <figure class="fig">
+      <img src="img/install-4.png" loading="lazy">
+    </figure>
+    <li>
+      メイン画面が表示されます。<br>
+      画面下部の <strong>Run</strong> をクリックしてみましょう。
+    </li>
+
+    <figure class="fig">
+      <img src="img/install-5.png" loading="lazy">
+    </figure>
+    <li>
+      右上に計算結果が表示されます（初期状態ではヤード・ポンド法）。
+    </li>
+
+    <figure class="fig">
+      <img src="img/install-6.png" loading="lazy">
+    </figure>
+    <figure class="fig">
+      <img src="img/install-7.png" loading="lazy">
+    </figure>
+    <li>
+      画面上部の <strong>E/m</strong> アイコンをクリックするとメートル法表示に切り替わります。<br>
+      数値が表示されていれば、インストールは成功です。
+    </li>
+  </ul>
+
+  <p class="sub">
+    次のページでは、WEPPの入力データについて説明します。
+  </p>
+</section>
+
+{% include wepp_nav.html %}
